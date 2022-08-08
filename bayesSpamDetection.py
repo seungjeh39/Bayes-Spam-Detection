@@ -67,6 +67,10 @@ def getSpamProbability(test):
     print("Spam test: ", testVecToWord(test))
     print("  answer                     = ", clf.predict(test))
     print("  nospam vs spam probability = ", clf.predict_proba(test))   # [1. 0.] correspond to NoSpam and Spam probability, respectively.
+    if clf.predict(test)[0] == 1:
+        print("It is a spam")
+    elif clf.predict(test)[0] == 0:
+        print("It is not a spam")
     print(" ")
 
 
