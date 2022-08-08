@@ -6,26 +6,26 @@ from sklearn.naive_bayes import MultinomialNB
 
 
 # dictionary to look up words from the data vector (case sensitive)
-dictionary = np.array(["congrats","you","are","selected","won","lottery","travel",
+dictionary = np.array(["you","are","selected","won","lottery","travel",
                        "for","free","credit","cards","very","good","night","send",
-                       "us","your","password","account","renew","get","is"])
+                       "us","your","password","account","renew","get","is","congrats"])
 
 
 
 # spam data : training set
 # sentence vectors
 X = np.array([
- [1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [0] congrats you are selected
- [0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] travel for free
- [1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] congrats you won lottery
- [0,1,1,1,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0],     # [1] you are selected for credit cards
- [0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0],     # [0] very good
- [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0],     # [0] good night
- [0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] lottery
- [0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0],     # [1] send us your password
- [0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0],     # [1] get free credit cards
- [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0],     # [0] renew your account
- [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1]      # [0] your account is good
+ [1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],     # [0] congrats you are selected
+ [0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] travel for free
+ [1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],     # [1] congrats you won lottery
+ [1,1,1,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] you are selected for credit cards
+ [0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0],     # [0] very good
+ [0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0],     # [0] good night
+ [0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] lottery
+ [0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0],     # [1] send us your password
+ [0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0],     # [1] get free credit cards
+ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0],     # [0] renew your account
+ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0]      # [0] your account is good
 ])
 
 # target values (spam=1, not spam=0)
