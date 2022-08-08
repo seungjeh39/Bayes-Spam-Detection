@@ -29,12 +29,12 @@ X = np.array([
  [1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]      # [0] congrats you are selected
 ])
 
-# target values (spam=1, not spam=0)
+# target values (spam=1, nospam=0)
 y = np.array([1,1,1,0,0,1,1,1,0,0,0])
 
 
 
-# Set up model and train 
+# Model set up and training
 clf = MultinomialNB()
 clf.fit(X, y)
 
@@ -63,11 +63,11 @@ def testSentenceToVec(sentence):
                 break
     return testVec
 
-# Get spam probaility 
+# getSpamProbability: Get spam probaility 
 def getSpamProbability(test):
     print("Spam test: ", testVecToWord(test))
     print("  answer                     = ", clf.predict(test))
-    print("  nospam vs spam probability = ", clf.predict_proba(test))   # [1. 0.] correspond to NoSpam and Spam probability, respectively.
+    print("  nospam vs spam probability = ", clf.predict_proba(test)) 
     if clf.predict(test)[0] == 1:
         print("It is a spam")
     elif clf.predict(test)[0] == 0:
