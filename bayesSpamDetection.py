@@ -16,7 +16,7 @@ dictionary = np.array(["you","are","selected","won","lottery","travel",
 # spam data : training set
 # sentence vectors
 X = np.array([
- [0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] travel for free
+ [0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] travel for free 
  [1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],     # [1] congrats you won lottery
  [1,1,1,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0],     # [1] you are selected for credit cards
  [0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0],     # [0] very good
@@ -54,7 +54,7 @@ def testVecToWord(testVec):
 
 # testSentenceToVec: Convert test sentences to vectors
 def testSentenceToVec(sentence):
-    testVec = np.array([[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]])
+    testVec = np.array([[0] * len(dictionary)])
     words = sentence.split()
     for i in range(len(words)):
         for j in range(len(dictionary)):
